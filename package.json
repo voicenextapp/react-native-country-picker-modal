@@ -2,7 +2,7 @@
   "name": "react-native-country-picker-modal",
   "version": "2.0.0",
   "description": "react-native country picker",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "src/index.ts",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
@@ -15,8 +15,6 @@
     "build": "rm -rf lib/ && node_modules/.bin/tsc && mkdir ./lib && cp -rf ./src/assets ./lib/assets && bun minify",
     "minify": "bun minify:emoji",
     "minify:emoji": "./scripts/minify.js ./lib/assets/data/countries-emoji.json",
-    "config:dev": "json -I -f package.json -e 'this.main=\"node_modules/expo/AppEntry.js\"'",
-    "config:npm": "json -I -f package.json -e 'this.main=\"src/index.tsx\"'",
     "lint": "eslint .",
     "test": "TZ=Europe/Paris jest",
     "data:image": "rm -rf ./data/countries.json && ./scripts/transform-world-countries.js > ./data/countries.json",
