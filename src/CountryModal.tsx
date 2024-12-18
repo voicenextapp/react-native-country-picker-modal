@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ModalProps, SafeAreaView, StyleSheet, Platform } from 'react-native'
 import { AnimatedModal } from './AnimatedModal'
-import { Modal } from './Modal'
+import { Modal } from 'react-native'
 import { useTheme } from './CountryTheme'
 import { CountryModalContext } from './CountryModalProvider'
 

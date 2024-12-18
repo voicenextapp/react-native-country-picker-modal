@@ -7,7 +7,7 @@ import {
   Button,
   ScrollView,
 } from 'react-native'
-import CountryPicker, { CountryModalProvider } from './src/'
+import { CountryPicker, CountryModalProvider } from './src/'
 import { CountryCode, Country } from './src/types'
 import { Row } from './src/Row'
 import { DARK_THEME } from './src/CountryTheme'
