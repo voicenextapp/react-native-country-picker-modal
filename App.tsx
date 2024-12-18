@@ -149,7 +149,6 @@ export default function App() {
           onValueChange={setWithFlagButton}
         />
         <CountryPicker
-          theme={dark ? DARK_THEME : {}}
           {...{
             allowFontScaling,
             countryCode,
