@@ -52,7 +52,7 @@ const Option = ({ value, onValueChange, title }: OptionProps) => (
   </Row>
 )
 
-const App = () => {
+export default function App() {
   const [countryCode, setCountryCode] = useState<CountryCode>('US')
   const [country, setCountry] = useState<Country>()
   const [withCountryNameButton, setWithCountryNameButton] =
@@ -185,5 +185,3 @@ const App = () => {
     </CountryModalProvider>
   )
 }
-
-export default App

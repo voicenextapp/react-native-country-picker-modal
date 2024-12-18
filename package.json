@@ -9,7 +9,7 @@
     "url": "git+https://github.com/xcarpentier/react-native-country-picker-modal.git"
   },
   "scripts": {
-    "start": "expo start --reset-cache",
+    "start": "expo start",
     "start:web": "bun config:dev && expo start -w",
     "tsc": "node_modules/.bin/tsc --noEmit",
     "build": "rm -rf lib/ && node_modules/.bin/tsc && mkdir ./lib && cp -rf ./src/assets ./lib/assets && bun minify",
@@ -30,7 +30,7 @@
     "postpublish": "bun config:dev",
     "deploy": "gh-pages -d web-build",
     "predeploy": "bun verify && expo build:web && mkdir web-build/countries && cp ./data/countries.json web-build/countries/index.json",
-    "dev": "expo start -w --reset-cache"
+    "dev": "expo start -w"
   },
   "keywords": [
     "react-native",
@@ -120,5 +120,8 @@
   },
   "resolutions": {
     "mem": "^4.0.0"
-  }
+  },
+  "trustedDependencies": [
+    "core-js"
+  ]
 }
