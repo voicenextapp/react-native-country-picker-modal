@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { Emoji } from './Emoji'
 import { CountryCode } from './types'
 import { useContext } from './CountryContext'
-import { useAsync } from 'react-async-hook'
+import { useAsync } from 'react-use'
 import {
   Image,
   StyleSheet,
@@ -55,7 +55,7 @@ const ImageFlag = memo(({ countryCode, flagSize }: FlagType) => {
         styles.imageFlag,
         { borderColor: 'transparent', height: flagSize },
       ]}
-      source={{ uri: asyncResult.result }}
+      source={{ uri: asyncResult.value }}
     />
   )
 })
@@ -72,7 +72,7 @@ const EmojiFlag = memo(({ countryCode, flagSize }: FlagType) => {
       style={[styles.emojiFlag, { fontSize: flagSize }]}
       allowFontScaling={false}
     >
-      <Emoji {...{ name: asyncResult.result! }} />
+      <Emoji {...{ name: asyncResult.value! }} />
     </Text>
   )
 })

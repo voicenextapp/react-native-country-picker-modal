@@ -9,8 +9,8 @@
     "url": "git+https://github.com/xcarpentier/react-native-country-picker-modal.git"
   },
   "scripts": {
-    "start": "expo start",
-    "start:web": "bun config:dev && expo start -w --dev",
+    "start": "expo start --reset-cache",
+    "start:web": "bun config:dev && expo start -w",
     "tsc": "node_modules/.bin/tsc --noEmit",
     "build": "rm -rf lib/ && node_modules/.bin/tsc && mkdir ./lib && cp -rf ./src/assets ./lib/assets && bun minify",
     "minify": "bun minify:emoji",
@@ -29,7 +29,8 @@
     "prepublishOnly": "bun verify && bun config:npm",
     "postpublish": "bun config:dev",
     "deploy": "gh-pages -d web-build",
-    "predeploy": "bun verify && expo build:web && mkdir web-build/countries && cp ./data/countries.json web-build/countries/index.json"
+    "predeploy": "bun verify && expo build:web && mkdir web-build/countries && cp ./data/countries.json web-build/countries/index.json",
+    "dev": "expo start -w --reset-cache"
   },
   "keywords": [
     "react-native",
@@ -45,11 +46,16 @@
   },
   "homepage": "http://xcarpentier.github.io/react-native-country-picker-modal",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@callstack/react-theme-provider": "3.0.9",
+    "@expo/metro-config": "~0.10.7",
     "@expo/metro-runtime": "^4.0.0",
+    "@react-native/assets-registry": "^0.76.5",
+    "@react-native/metro-config": "^0.76.5",
     "fuse.js": "3.4.5",
     "node-emoji": "1.11.0",
-    "react-async-hook": "4.0.0"
+    "react-native-svg-transformer": "^1.5.0",
+    "react-use": "^17.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -80,10 +86,10 @@
     "prettier": "3.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.72.5",
+    "react-native": "0.72.10",
     "react-native-web": "^0.19.13",
     "react-test-renderer": "18.2.0",
-    "typescript": "5.2.2",
+    "typescript": "^5.7.2",
     "world-countries": "5.0.0"
   },
   "jest": {
